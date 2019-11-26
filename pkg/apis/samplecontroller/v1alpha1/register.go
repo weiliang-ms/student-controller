@@ -1,15 +1,15 @@
-package v1
+package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	"student-controller/pkg/apis/wl"
+	"student-controller/pkg/apis/samplecontroller"
 )
 
 var SchemeGroupVersion = schema.GroupVersion{
-	Group:   wl.GroupName,
-	Version: wl.Version,
+	Group:   samplecontroller.GroupName,
+	Version: samplecontroller.Version,
 }
 
 var (

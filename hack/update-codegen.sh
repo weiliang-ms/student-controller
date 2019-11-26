@@ -32,4 +32,4 @@ bash "${CODEGEN_PKG}"/generate-groups.sh "deepcopy,client,informer,lister" \
   --go-header-file "${SCRIPT_ROOT}"/hack/boilerplate.go.txt
 
 # To use your own boilerplate text append:
-#   --go-header-file "${SCRIPT_ROOT}"/hack/wl-boilerplate.go.txt
+#   --go-header-file "${SCRIPT_ROOT}"/hack/samplecontroller-boilerplate.go.txt
