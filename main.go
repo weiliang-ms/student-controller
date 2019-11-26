@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"student-controller/client"
 	"time"
 
 	"github.com/golang/glog"
@@ -43,10 +44,8 @@ func main() {
 	}
 
 	studentInformerFactory := informers.NewSharedInformerFactory(studentClient, time.Second*30)
-
 	//得到controller
-	controller := NewController(kubeClient, studentClient,
-		studentInformerFactory.Wlcontroller().V1().Students())
+	controller := client.NewController(kubeClient, studentClient, studentInformerFactory.Wlcontroller().V1().Students())
 
 	//启动informer
 	go studentInformerFactory.Start(stopCh)
