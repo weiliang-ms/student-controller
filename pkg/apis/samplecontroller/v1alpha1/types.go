@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime"
 )
 
 // +genclient
@@ -14,6 +15,10 @@ type Foo struct {
 
 	Spec   FooSpec   `json:"spec"`
 	Status FooStatus `json:"status"`
+}
+
+func (f Foo) DeepCopyObject() runtime.Object {
+	panic("implement me")
 }
 
 // FooSpec is the spec for a Foo resource
@@ -35,4 +40,8 @@ type FooList struct {
 	metav1.ListMeta `json:"metadata"`
 
 	Items []Foo `json:"items"`
+}
+
+func (f FooList) DeepCopyObject() runtime.Object {
+	panic("implement me")
 }
