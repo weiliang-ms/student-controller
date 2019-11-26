@@ -3,11 +3,10 @@ package signals
 import (
 	"os"
 	"os/signal"
-	"syscall"
 )
 
 var onlyOneSignalHandler = make(chan struct{})
-var shutdownSignals = []os.Signal{os.Interrupt, syscall.SIGTERM}
+var shutdownSignals = []os.Signal{os.Interrupt}
 
 func SetupSignalHandler() (stopCh <-chan struct{}) {
 	close(onlyOneSignalHandler) // panics when called twice
