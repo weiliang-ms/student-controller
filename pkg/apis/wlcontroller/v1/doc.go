@@ -1,4 +1,4 @@
 // +k8s:deepcopy-gen=package
-// +groupName=mind.automl
+// +groupName=wlcontroller
 
 package v1
